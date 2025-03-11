@@ -23,7 +23,11 @@ public class ClassPractice1 extends javax.swing.JFrame {
 
         //making the error anouncement invisible
         LabelError.setVisible(false);
-
+        
+        //disable the text fields that show results
+        TextFieldPriceResult.setEditable(false);
+        TextFieldTotalResult.setEditable(false);
+        
     }
 
     /**
@@ -39,24 +43,20 @@ public class ClassPractice1 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         LabelTicketNum = new javax.swing.JLabel();
         TextFieldTicketNum = new javax.swing.JTextField();
-        checkboxMatinee = new java.awt.Checkbox();
         LabelPriceEach = new javax.swing.JLabel();
         LabelTotal = new javax.swing.JLabel();
         RadioButtonOrchestra = new javax.swing.JRadioButton();
         RadioButtonMezzanine = new javax.swing.JRadioButton();
         RadioButtonBalcony = new javax.swing.JRadioButton();
         ButtonCalculatePrice = new javax.swing.JButton();
-        PanelPlaceholderTotal = new javax.swing.JPanel();
-        LabelTotalResult = new javax.swing.JLabel();
-        PanelPlaceholderPrice = new javax.swing.JPanel();
-        LabelPriceEachResult = new javax.swing.JLabel();
         LabelError = new javax.swing.JLabel();
+        TextFieldPriceResult = new javax.swing.JTextField();
+        TextFieldTotalResult = new javax.swing.JTextField();
+        checkboxMatinee = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         LabelTicketNum.setText("Num Tickets");
-
-        checkboxMatinee.setLabel("Matinee");
 
         LabelPriceEach.setText("Price Each");
 
@@ -75,49 +75,13 @@ public class ClassPractice1 extends javax.swing.JFrame {
             }
         });
 
-        PanelPlaceholderTotal.setBackground(new java.awt.Color(255, 255, 255));
-
-        LabelTotalResult.setText(" ");
-
-        javax.swing.GroupLayout PanelPlaceholderTotalLayout = new javax.swing.GroupLayout(PanelPlaceholderTotal);
-        PanelPlaceholderTotal.setLayout(PanelPlaceholderTotalLayout);
-        PanelPlaceholderTotalLayout.setHorizontalGroup(
-            PanelPlaceholderTotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPlaceholderTotalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelTotalResult, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        PanelPlaceholderTotalLayout.setVerticalGroup(
-            PanelPlaceholderTotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPlaceholderTotalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelTotalResult)
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-
-        PanelPlaceholderPrice.setBackground(new java.awt.Color(255, 255, 255));
-
-        LabelPriceEachResult.setText(" ");
-
-        javax.swing.GroupLayout PanelPlaceholderPriceLayout = new javax.swing.GroupLayout(PanelPlaceholderPrice);
-        PanelPlaceholderPrice.setLayout(PanelPlaceholderPriceLayout);
-        PanelPlaceholderPriceLayout.setHorizontalGroup(
-            PanelPlaceholderPriceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPlaceholderPriceLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelPriceEachResult, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        PanelPlaceholderPriceLayout.setVerticalGroup(
-            PanelPlaceholderPriceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPlaceholderPriceLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelPriceEachResult)
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-
         LabelError.setText("Error!!");
+
+        TextFieldPriceResult.setText(" ");
+
+        TextFieldTotalResult.setText(" ");
+
+        checkboxMatinee.setText("Matinee");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -126,63 +90,59 @@ public class ClassPractice1 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RadioButtonMezzanine, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RadioButtonOrchestra, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RadioButtonBalcony, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(ButtonCalculatePrice)
-                                .addGap(54, 54, 54)
-                                .addComponent(LabelPriceEach)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(LabelTicketNum, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TextFieldTicketNum, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(LabelError, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(LabelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(1, 1, 1)))
+                        .addComponent(LabelError, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(TextFieldTotalResult, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(checkboxMatinee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PanelPlaceholderTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PanelPlaceholderPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(40, Short.MAX_VALUE))
+                            .addComponent(RadioButtonMezzanine, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RadioButtonOrchestra, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RadioButtonBalcony, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(ButtonCalculatePrice)
+                                        .addGap(54, 54, 54)
+                                        .addComponent(LabelPriceEach))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(LabelTicketNum, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TextFieldTicketNum, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(checkboxMatinee)
+                                    .addComponent(TextFieldPriceResult, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(LabelTicketNum)
-                        .addComponent(TextFieldTicketNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(checkboxMatinee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelTicketNum)
+                    .addComponent(TextFieldTicketNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkboxMatinee))
                 .addGap(18, 18, 18)
                 .addComponent(RadioButtonOrchestra)
                 .addGap(18, 18, 18)
                 .addComponent(RadioButtonMezzanine)
                 .addGap(18, 18, 18)
                 .addComponent(RadioButtonBalcony)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LabelPriceEach)
-                            .addComponent(ButtonCalculatePrice))
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LabelTotal)
-                            .addComponent(LabelError))
-                        .addGap(10, 10, 10))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(PanelPlaceholderPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(PanelPlaceholderTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelPriceEach)
+                    .addComponent(ButtonCalculatePrice)
+                    .addComponent(TextFieldPriceResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelTotal)
+                    .addComponent(LabelError)
+                    .addComponent(TextFieldTotalResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -235,8 +195,8 @@ public class ClassPractice1 extends javax.swing.JFrame {
 
                 //if they didn't pick a ticket option show the error message and clear the each and total places
                 LabelError.setVisible(true);
-                LabelTotalResult.setText(" ");
-                LabelPriceEachResult.setText(" ");
+                TextFieldTotalResult.setText(" ");
+                TextFieldPriceResult.setText(" ");
 
                 typeSelected = false;
 
@@ -247,17 +207,17 @@ public class ClassPractice1 extends javax.swing.JFrame {
 
                 //Sets the price and total labels:
                 //setting the price label to the price per ticket
-                LabelPriceEachResult.setText("$" + ticketPrice);
+                TextFieldPriceResult.setText("$" + ticketPrice);
 
                 //if the matinee is selected multiply the total cost by 85% bc of the 15% discount
-                if (checkboxMatinee.getState()) {
+                if (checkboxMatinee.isSelected()) {
 
                     totalPrice = (int) (totalPrice * 0.85);
 
                 }
 
                 //then we set the total equal to it
-                LabelTotalResult.setText("$" + Integer.toString(totalPrice));
+                TextFieldTotalResult.setText("$" + Integer.toString(totalPrice));
 
             }
 
@@ -265,8 +225,8 @@ public class ClassPractice1 extends javax.swing.JFrame {
 
             //show the error message and clear the each and total places
             LabelError.setVisible(true);
-            LabelTotalResult.setText(" ");
-            LabelPriceEachResult.setText(" ");
+            TextFieldTotalResult.setText(" ");
+            TextFieldPriceResult.setText(" ");
 
         }
 
@@ -314,18 +274,16 @@ public class ClassPractice1 extends javax.swing.JFrame {
     private javax.swing.JButton ButtonCalculatePrice;
     private javax.swing.JLabel LabelError;
     private javax.swing.JLabel LabelPriceEach;
-    private javax.swing.JLabel LabelPriceEachResult;
     private javax.swing.JLabel LabelTicketNum;
     private javax.swing.JLabel LabelTotal;
-    private javax.swing.JLabel LabelTotalResult;
-    private javax.swing.JPanel PanelPlaceholderPrice;
-    private javax.swing.JPanel PanelPlaceholderTotal;
     private javax.swing.JRadioButton RadioButtonBalcony;
     private javax.swing.JRadioButton RadioButtonMezzanine;
     private javax.swing.JRadioButton RadioButtonOrchestra;
+    private javax.swing.JTextField TextFieldPriceResult;
     private javax.swing.JTextField TextFieldTicketNum;
+    private javax.swing.JTextField TextFieldTotalResult;
     private javax.swing.ButtonGroup buttonGroup1;
-    private java.awt.Checkbox checkboxMatinee;
+    private javax.swing.JCheckBox checkboxMatinee;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
