@@ -23,11 +23,11 @@ public class ClassPractice1 extends javax.swing.JFrame {
 
         //making the error anouncement invisible
         LabelError.setVisible(false);
-        
+
         //disable the text fields that show results
         TextFieldPriceResult.setEditable(false);
         TextFieldTotalResult.setEditable(false);
-        
+
     }
 
     /**
@@ -63,10 +63,25 @@ public class ClassPractice1 extends javax.swing.JFrame {
         LabelTotal.setText("Total");
 
         RadioButtonOrchestra.setText("Orchestra");
+        RadioButtonOrchestra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioButtonOrchestraActionPerformed(evt);
+            }
+        });
 
         RadioButtonMezzanine.setText("Mezzanine");
+        RadioButtonMezzanine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioButtonMezzanineActionPerformed(evt);
+            }
+        });
 
         RadioButtonBalcony.setText("Balcony");
+        RadioButtonBalcony.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioButtonBalconyActionPerformed(evt);
+            }
+        });
 
         ButtonCalculatePrice.setText("Calc Price");
         ButtonCalculatePrice.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +97,11 @@ public class ClassPractice1 extends javax.swing.JFrame {
         TextFieldTotalResult.setText(" ");
 
         checkboxMatinee.setText("Matinee");
+        checkboxMatinee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkboxMatineeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -91,7 +111,7 @@ public class ClassPractice1 extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(LabelError, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelError)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(LabelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
@@ -116,7 +136,7 @@ public class ClassPractice1 extends javax.swing.JFrame {
                                     .addComponent(checkboxMatinee)
                                     .addComponent(TextFieldPriceResult, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addGap(54, 54, 54))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,6 +252,177 @@ public class ClassPractice1 extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_ButtonCalculatePriceActionPerformed
+
+    private void RadioButtonOrchestraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonOrchestraActionPerformed
+        //try and except to catch if the text field is empty when they hit the button
+        try {
+
+            //defining integers for the price of a ticket and for the number of tickets
+            int ticketPrice = 85;
+            int numTickets = Integer.parseInt(TextFieldTicketNum.getText());
+            int totalPrice = ticketPrice * numTickets;
+
+            LabelError.setVisible(false);
+
+            //Sets the price and total labels:
+            //setting the price label to the price per ticket
+            TextFieldPriceResult.setText("$" + ticketPrice);
+
+            //if the matinee is selected multiply the total cost by 85% bc of the 15% discount
+            if (checkboxMatinee.isSelected()) {
+
+                totalPrice = (int) (totalPrice * 0.85);
+
+            }
+
+            //then we set the total equal to it
+            TextFieldTotalResult.setText("$" + Integer.toString(totalPrice));
+
+        } catch (NumberFormatException e) {
+
+            //show the error message and clear the each and total places
+            LabelError.setVisible(true);
+            TextFieldTotalResult.setText(" ");
+            TextFieldPriceResult.setText(" ");
+
+        }
+
+    }//GEN-LAST:event_RadioButtonOrchestraActionPerformed
+
+    private void RadioButtonMezzanineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonMezzanineActionPerformed
+
+        //try and except to catch if the text field is empty when they hit the button
+        try {
+
+            //defining integers for the price of a ticket and for the number of tickets
+            int ticketPrice = 70;
+            int numTickets = Integer.parseInt(TextFieldTicketNum.getText());
+            int totalPrice = ticketPrice * numTickets;
+
+            LabelError.setVisible(false);
+
+            //Sets the price and total labels:
+            //setting the price label to the price per ticket
+            TextFieldPriceResult.setText("$" + ticketPrice);
+
+            //if the matinee is selected multiply the total cost by 85% bc of the 15% discount
+            if (checkboxMatinee.isSelected()) {
+
+                totalPrice = (int) (totalPrice * 0.85);
+
+            }
+
+            //then we set the total equal to it
+            TextFieldTotalResult.setText("$" + Integer.toString(totalPrice));
+
+        } catch (NumberFormatException e) {
+
+            //show the error message and clear the each and total places
+            LabelError.setVisible(true);
+            TextFieldTotalResult.setText(" ");
+            TextFieldPriceResult.setText(" ");
+
+        }
+
+
+    }//GEN-LAST:event_RadioButtonMezzanineActionPerformed
+
+    private void RadioButtonBalconyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonBalconyActionPerformed
+
+        //try and except to catch if the text field is empty when they hit the button
+        try {
+
+            //defining integers for the price of a ticket and for the number of tickets
+            int ticketPrice = 40;
+            int numTickets = Integer.parseInt(TextFieldTicketNum.getText());
+            int totalPrice = ticketPrice * numTickets;
+
+            LabelError.setVisible(false);
+
+            //Sets the price and total labels:
+            //setting the price label to the price per ticket
+            TextFieldPriceResult.setText("$" + ticketPrice);
+
+            //if the matinee is selected multiply the total cost by 85% bc of the 15% discount
+            if (checkboxMatinee.isSelected()) {
+
+                totalPrice = (int) (totalPrice * 0.85);
+
+            }
+
+            //then we set the total equal to it
+            TextFieldTotalResult.setText("$" + Integer.toString(totalPrice));
+
+        } catch (NumberFormatException e) {
+
+            //show the error message and clear the each and total places
+            LabelError.setVisible(true);
+            TextFieldTotalResult.setText(" ");
+            TextFieldPriceResult.setText(" ");
+
+        }
+
+
+    }//GEN-LAST:event_RadioButtonBalconyActionPerformed
+
+    private void checkboxMatineeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkboxMatineeActionPerformed
+       
+        try {
+
+            //defining integers for the price of a ticket and for the number of tickets
+            int ticketPrice = 0;
+            int numTickets = Integer.parseInt(TextFieldTicketNum.getText());
+            int totalPrice = ticketPrice * numTickets;
+
+            LabelError.setVisible(false);
+
+            if (RadioButtonOrchestra.isSelected()) {
+
+                ticketPrice = 85;
+                totalPrice = numTickets * ticketPrice;
+
+            } else if (RadioButtonMezzanine.isSelected()) {
+
+                ticketPrice = 70;
+                totalPrice = numTickets * ticketPrice;
+
+            } else if (RadioButtonBalcony.isSelected()) {
+
+                ticketPrice = 45;
+                totalPrice = numTickets * ticketPrice;
+
+            } else {
+
+                //if they didn't pick a ticket option show the error message and clear the each and total places
+                LabelError.setVisible(true);
+                TextFieldTotalResult.setText(" ");
+                TextFieldPriceResult.setText(" ");
+
+            }
+
+            //Sets the price and total labels:
+            //setting the price label to the price per ticket
+            TextFieldPriceResult.setText("$" + ticketPrice);
+
+            //if the matinee is selected multiply the total cost by 85% bc of the 15% discount
+            if (checkboxMatinee.isSelected()) {
+
+                totalPrice = (int) (totalPrice * 0.85);
+
+            }
+
+            //then we set the total equal to it
+            TextFieldTotalResult.setText("$" + Integer.toString(totalPrice));
+        } catch (Exception e) {
+
+            //show the error message and clear the each and total places
+            LabelError.setVisible(true);
+            TextFieldTotalResult.setText(" ");
+            TextFieldPriceResult.setText(" ");
+
+        }
+
+    }//GEN-LAST:event_checkboxMatineeActionPerformed
 
     /**
      * @param args the command line arguments
